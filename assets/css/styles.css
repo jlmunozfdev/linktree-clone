@@ -1,5 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --background-color: linear-gradient(to top, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+    --color-one: aliceblue;
+    --color-two: red;
+    --font-page: 'Poppins', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 16px;
+    font-family: var(--font-page);
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background-color);
+}
+/* Mode Dark */
+body.dark-mode {
+   background:  linear-gradient(to top, rgb(55, 65, 81) 0%, rgb(17, 24, 39) 50%, rgb(0, 0, 0) 100%);
+}
+
+.container {
+    width: 80%;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Toggle Button Dark */
+.toggle-btn {
+    position: relative;
+    bottom: 20px;
+    left: 140px;
+    width: 60px;
+    height: 25px;
+    margin: 0 auto;
+    border-radius: 40px;
+  }
+  
+  input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  #_1st-toggle-btn span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+    opacity: 1;
+    background-color: #fff;
+    box-shadow: 0px 2px 25px #d9d9d9;
+    border-radius: 40px;
+    transition: 0.2s ease background-color, 0.2s ease opacity;
+  }
+  
+  #_1st-toggle-btn span:before,
+  #_1st-toggle-btn span:after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.5s ease transform, 0.2s ease background-color;
+  }
+  
+  #_1st-toggle-btn span:before {
+    background-color: #fff;
+    transform: translate(-58px, 0px);
+    z-index: 1;
+  }
+  
+  #_1st-toggle-btn span:after {
+    background-color: #000;
+    transform: translate(6px, -5px);
+    z-index: 0;
+  }
+  
+  #_1st-toggle-btn input[type="checkbox"]:checked + span {
+    background-color: #000;
+  }
+  
+  #_1st-toggle-btn input[type="checkbox"]:active + span {
+    opacity: 0.5;
+  }
+  
+  #_1st-toggle-btn input[type="checkbox"]:checked + span:before {
+    background-color: #000;
+    transform: translate(28px, -8px);
+  }
+  
+  #_1st-toggle-btn input[type="checkbox"]:checked + span:after {
+    background-color: #fff;
+    transform: translate(36px, -5px);
+  }
+  
+
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+picture img{
+    width: 110px;
+    height: 110px;
+}
+
+.card--one aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.card--one aside h1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: var(--color-one);
+}
+
+.card--one aside p {
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 0.09rem;
+    color: var(--color-one);
+    opacity: 0.8;
+}
+
+.card--two {
+    display: flex;
+}
+
+
+.card--two aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.8rem;
+    width: 20rem;
+    height: 2.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    background: rgba(11, 73, 124, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.06), -5px -5px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur( 13px );
+    -webkit-backdrop-filter: blur( 13px );
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.social:hover{
+    transform: scale(1.05);
+}
+
+.social p {
+    color: var(--color-one);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.social i {
+    color: var(--color-one);
+    font-size: 1.2rem;
+}
+
+.social .fas:before {
+    content: '\f0c1';
+    font-family: FontAwesome;
+}
+
+.social:hover .fas:before {
+    content: '\e09a';
+}
+
+
+
